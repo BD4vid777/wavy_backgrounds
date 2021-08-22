@@ -14,7 +14,7 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 400px;
+    min-height: 300px;
     padding: 100px 20vw;
 }
 
@@ -34,6 +34,34 @@ section {
     background: midnightblue;
 }
 
-.curve {
+.wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
 
+.wave svg {
+    position: relative;
+    display: block;
+    width: calc(140% + 1px);
+    height: 152px;
+}
+
+.wave .shape-fill {
+    fill: #202731;
+}
+
+.spacer {
+    aspect-ratio: 900/300;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.layer1 {
+    background-image: url("./assets/layered-waves-haikei.svg");
 }
