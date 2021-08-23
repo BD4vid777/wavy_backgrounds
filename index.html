@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles.css">
     <title>Wavy Backgrounds</title>
     <script src="https://cdn.jsdelivr.net/npm/kute.js@2.1.2/dist/kute.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lax.js" ></script>
 </head>
 <body>
 
@@ -26,7 +27,7 @@
 
 <div class="spacer layer2 flip"></div>
 <section class="pink">
-    <div class="blob-content">
+    <div class="blob-content lax lax_preset_fadeInOut:200:0">
         <h1>Nice Waves with animated blob</h1>
         <p>Waves and blob made again with Haikei app and blob morph with Kute.js</p>
     </div>
@@ -42,6 +43,14 @@
 <div class="spacer layer2"></div>
 
 <script>
+    window.onload = function () {
+        lax.init()
+
+        lax.addDriver('scrollY', function () {
+            return window.scrollY
+        })
+    }
+
     const tween = KUTE.fromTo(
         '#blob1',
         { path: '#blob1' },
@@ -49,7 +58,9 @@
         { repeat: 999, duration: 3000, yoyo: true }
     )
 
-    tween.start()
+    tween.start();
+
+
 
 </script>
 
